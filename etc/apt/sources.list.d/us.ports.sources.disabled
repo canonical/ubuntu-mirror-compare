@@ -1,0 +1,6 @@
+Enabled: yes
+Types: deb-src
+URIs: http://us.ports.ubuntu.com/ubuntu-ports
+Suites: noble noble-updates noble-security
+Components: main universe multiverse restricted
+Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg

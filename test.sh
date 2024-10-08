@@ -16,11 +16,12 @@ test() {
     mirror="$1"
     reset
     ln -s ${mirror}.sources.disabled etc/apt/sources.list.d/${mirror}.sources
-    start=$(date)
+    apt_update_start=$(date +"%s")
     $APT update
+    apt_source_start=$(date +"%s")
     $APT source --download-only linux
-    end=$(date)
-    echo "$start,$end" >> $mirror.csv
+    end=$(date +"%s")
+    echo "$apt_update_start,$apt_source_start,$end" >> $mirror.csv
 }
 
 random_sleep() {
